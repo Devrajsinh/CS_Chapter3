@@ -10,8 +10,15 @@ namespace Admission
         static void Main(string[] args)
         {
             Console.WriteLine("What is your gradepoint average?");
-            int Average = Convert.ToInt32(Console.ReadLine());
-            if (Average > 3.0 || payRate < 3.0)
+            double Average = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("What is your admission test score?");
+            int admission = Convert.ToInt32(Console.ReadLine());
+
+            if (Average >= 3.0 && admission >= 60)
+                Console.WriteLine("Accept");
+            else if (admission >= 80)
+                Console.WriteLine("Accept");
+            else
                 Console.WriteLine("Reject");
         }
     }

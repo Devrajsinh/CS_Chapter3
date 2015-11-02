@@ -10,10 +10,15 @@ namespace EnsureValidPayRate
         static void Main(string[] args)
         {
             Console.WriteLine("What's your payrate?");
-            int payRate = Convert.ToInt32(Console.ReadLine());
-            if (payRate > 5.65 || payRate < 49.99)
+            double payRate = Convert.ToDouble(Console.ReadLine());
+            double weeklyRate = payRate * 40;
+            if (payRate < 5.65 || payRate > 49.99)
                 Console.WriteLine("Error in pay rate");
+            else
+                Console.WriteLine("Payrate: {0}\tWeekly Payrate: {1}", payRate.ToString("C"), weeklyRate.ToString("C"));
+            
+
         }
-        }
+        
     }
 }
